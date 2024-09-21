@@ -1,0 +1,34 @@
+//create a class by 'Car'
+class Car {
+    //Attributes
+    String make;
+    String model;
+    String color;
+    int year;
+
+    //contructor of car class
+    public Car(String make, String model, String color, int year) {
+        this.make = make;
+        this.model = model;
+        this.color = color;
+        this.year = year;
+    }
+     //method for taking cae information
+     public void displayinfo() {
+        System.out.println("Car make by: " + make);
+        System.out.println("Car model is : " + model);
+        System.out.println("Car color is : " + color);
+        System.out.println("Year of manufactured is : " + year);
+     
+    
+}}
+//create main class
+public class Main {
+    public static void main(String args[]) {
+        //create a object of car class
+        Car car1=new Car("Toyota", "Land Cruiser", "Black", 2026);
+        //using a method to display car details
+        car1.displayinfo();
+        
+    }
+}
