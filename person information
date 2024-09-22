@@ -1,0 +1,43 @@
+// Person class with Encapsulation and Abstraction
+//prsn == person
+class Prsn {
+    // Private fields (Encapsulation)
+    private String name;
+    private int age;
+
+    // Constructor to initialize name and age
+    public Prsn(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter for name (Abstraction)
+    public String getName() {
+        return name;
+    }
+
+    // Getter for age (Abstraction)
+    public int getAge() {
+        return age;
+    }
+
+    // Method to display person's information (Abstraction)
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+// Main class to test the Person class
+public class Person {
+    public static void main(String[] args) {
+        // Creating a Person object using the constructor
+        Prsn person1 = new Prsn("Ali", 25);
+
+        // Displaying person's information
+        person1.displayInfo();
+        
+        // Accessing person's name and age using getters
+        System.out.println("Name: " + person1.getName());
+        System.out.println("Age: " + person1.getAge());
+    }
+}
