@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+//Addition.java
+class Addition {  
+    public void sum(int numa, int numb) {
+        int res = numa + numb;
+        System.out.println("Sum: " + res);
+    }
+}
+//AdditionMain.java
+public class AdditionMain { 
+    public static void main(String[] args) {
+        // Create object for Addition class
+        Addition myobj = new Addition();  
+        
+        // Create scanner object to get user input
+        Scanner sc = new Scanner(System.in);
+        
+        // Ask the user to input two numbers
+        System.out.println("Enter 1st number: ");
+        int num1 = sc.nextInt();
+        
+        System.out.println("Enter 2nd number: ");
+        int num2 = sc.nextInt();
+        
+        // Call sum method to add the two numbers
+        myobj.sum(num1, num2);
+        
+        // Close the scanner to prevent resource leak
+        sc.close();
+    }
+}
