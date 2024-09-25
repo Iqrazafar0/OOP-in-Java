@@ -1,0 +1,69 @@
+//create a class Distance
+class Distance {
+    //data members(feet & inches)
+    private int feet;
+    private int inches;
+
+    //constructor1 with no arguments
+    public Distance() {
+        feet = 0;
+        inches = 0;
+    }
+
+    //constructor2 with two arguments
+    public Distance(int f, int i) {
+        feet = f;
+        inches = i;
+    }
+    //Setter for feet
+    public void setFeet(int f) {
+        feet = f;
+    }
+    //Setter for inches
+    public void setInches(int i) {
+        inches = i;
+    }
+    //Getter for feet
+    public int getFeet() {
+        return feet;
+    }
+    //Getter for INCHES
+    public int getInches() {
+        return inches;
+    }
+    //Display method
+    public void display() {
+        System.out.println("Distance: " + feet + " feet, " + inches + " inches");
+    } 
+    //Method to add two diistance object
+    public Distance add(Distance d) {
+        int totalFeet = feet + d.feet;    // Adding the feet of two Distance objects
+        int totalInches = inches + d.inches; // Adding the inches of two Distance objects
+
+        // Convert inches to feet if greater than or equal to 12
+        if (totalInches >= 12) {
+            totalFeet += totalInches / 12;
+            totalInches = totalInches % 12;
+        }
+
+        // Return a new Distance object with the added values
+        return new Distance(totalFeet, totalInches);
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        // Creating two Distance objects using two-argument constructor
+        Distance d1 = new Distance(5, 9);
+        Distance d2 = new Distance(4, 11);
+
+        // Display the distances
+        d1.display();  // Output: Distance: 5 feet, 9 inches
+        d2.display();  // Output: Distance: 4 feet, 11 inches
+
+        // Adding two Distance objects
+        Distance d3 = d1.add(d2);
+
+        // Display the result of addition
+        d3.display();  // Output: Distance: 10 feet, 8 inches
+    }
+}
