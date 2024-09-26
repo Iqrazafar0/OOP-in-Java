@@ -1,0 +1,94 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+// Student class to store student details
+class Student {
+    private String name;
+    private int rollNumber;
+    private String course;
+    
+    // Constructor
+    public Student(String name, int rollNumber, String course) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.course = course;
+    }
+    
+    // Getters for student details
+    public String getName() {
+        return name;
+    }
+
+    public int getRollNumber() {
+        return rollNumber;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    // Display student details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Course: " + course);
+        System.out.println("---------------------------");
+    }
+}
+
+// Main class for managing student admission
+public class StudentAdmissionSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Student> students = new ArrayList<>();
+        
+        // Loop for adding multiple students
+        while (true) {
+            System.out.println("Student Admission System");
+            System.out.println("1. Add Student");
+            System.out.println("2. Display All Students");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            
+            switch (choice) {
+                case 1:
+                    // Adding a new student
+                    System.out.print("Enter student name: ");
+                    String name = scanner.next();
+                    System.out.print("Enter roll number: ");
+                    int rollNumber = scanner.nextInt();
+                    System.out.print("Enter course: ");
+                    String course = scanner.next();
+                    
+                    // Creating student object and adding to the list
+                    Student student = new Student(name, rollNumber, course);
+                    students.add(student);
+                    System.out.println("Student added successfully!\n");
+                    break;
+                    
+                case 2:
+                    // Displaying all students
+                    if (students.isEmpty()) {
+                        System.out.println("No students enrolled yet.");
+                    } else {
+                        System.out.println("\nAll Students:\n");
+                        for (Student s : students) {
+                            s.displayDetails();
+                        }
+                    }
+                    break;
+                    
+                case 3:
+                    // Exiting the program
+                    System.out.println("Exiting... Goodbye!");
+                    scanner.close();
+                    System.exit(0);
+                    break;
+                    
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+}
