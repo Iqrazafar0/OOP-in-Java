@@ -1,0 +1,30 @@
+// Animal class
+class Animal {
+    // Attributes (Properties)
+    String name;
+    String sound;
+    
+    // Constructor (to initialize an Animal object)
+    public Animal(String name, String sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    
+    // Method to display animal sound
+    public void makeSound() {
+        System.out.println(name + " makes a " + sound + " sound.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Animal class
+        Animal dog = new Animal("Dog", "bark");
+        Animal cat = new Animal("Cat", "meow");
+        
+        // Displaying the sound of both animals
+        dog.makeSound();
+        cat.makeSound();
+    }
+}
