@@ -1,0 +1,36 @@
+//create MobilePhone class
+class MobilePhone {
+    //Attributes
+    String brand;
+    String model;
+    int price;
+    String batterycapacity;
+
+    //Create constructor
+    MobilePhone(String b, String m, int p, String bc) {
+        brand = b;
+        model = m;
+        price = p;
+        batterycapacity = bc;
+    }
+    //create method to displaydetails
+public void display() {
+    System.out.println("Brand: " + brand);
+    System.out.println("Model: " + model);
+    System.out.println("Price: " + price);
+    System.out.println("BatteryCapacity: " + batterycapacity);
+}
+}
+
+
+
+//main class
+public class MobileMain {
+public static void main(String args[]) {
+    //create object for MobilePhone class
+    MobilePhone mp1 = new MobilePhone("Iphone", "16Pro", 90090, "10000mAh");
+
+    //call to display method
+    mp1.display();
+}
+}
