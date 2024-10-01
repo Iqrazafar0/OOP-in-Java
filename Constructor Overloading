@@ -1,0 +1,45 @@
+class Car {
+    String brand;
+    String model;
+    int year;
+    
+    // Constructor 1: No parameters
+    public Car() {
+        this.brand = "Unknown";
+        this.model = "Unknown";
+        this.year = 0;
+    }
+    
+    // Constructor 2: Two parameters
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+        this.year = 0; // Default year
+    }
+    
+    // Constructor 3: Three parameters
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Display car details
+    public void displayCarDetails() {
+        System.out.println("Brand: " + brand + ", Model: " + model + ", Year: " + year);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using different constructors
+        Car car1 = new Car(); // Calls the first constructor
+        Car car2 = new Car("Toyota", "Corolla"); // Calls the second constructor
+        Car car3 = new Car("Honda", "Civic", 2020); // Calls the third constructor
+
+        // Displaying the details of each car
+        car1.displayCarDetails();
+        car2.displayCarDetails();
+        car3.displayCarDetails();
+    }
+}
