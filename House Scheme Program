@@ -1,0 +1,92 @@
+// House Class
+class House {
+    int houseNumber;
+    String houseType;
+    double size;  // in square feet
+    double cost;  // in dollars
+
+    // Constructor for House class
+    House(int hn, String ht, double s, double c) {
+        houseNumber = hn;
+        houseType = ht;
+        size = s;
+        cost = c;
+    }
+
+    // Method to display house details
+    void displayHouseDetail() {
+        System.out.println("House Number: " + houseNumber);
+        System.out.println("House Type: " + houseType);
+        System.out.println("Size: " + size + " sq.ft.");
+        System.out.println("Cost: $" + cost);
+    }
+
+    // Getter for cost (used for total value calculation)
+    double getCost() {
+        return cost;
+    }
+}
+
+// HousingScheme Class
+class HousingScheme {
+    House[] houses;
+    int houseCount;
+
+    // Constructor for HousingScheme
+    HousingScheme(int totalHouses) {
+        houses = new House[totalHouses];
+        houseCount = 0;
+    }
+
+    // Method to add house to the scheme
+    void addHouse(House house) {
+        if (houseCount < houses.length) {
+            houses[houseCount] = house;
+            houseCount++;
+        } else {
+            System.out.println("Housing Scheme is full. Can't add more houses.");
+        }
+    }
+
+    // Method to display all houses
+    void displayAllHouses() {
+        for (int i = 0; i < houseCount; i++) {
+            houses[i].displayHouseDetail();
+            System.out.println("--------------------");
+        }
+    }
+
+    // Method to calculate total cost of all houses
+    double calculateTotalValue() {
+        double totalValue = 0;
+        for (int i = 0; i < houseCount; i++) {
+            totalValue += houses[i].getCost();
+        }
+        return totalValue;
+    }
+}
+
+// Main class to test the functionality
+public class HousingSchemeApp {
+    public static void main(String[] args) {
+        // Create Housing Scheme for 3 houses
+        HousingScheme scheme = new HousingScheme(3);
+
+        // Create and add houses
+        House house1 = new House(101, "Villa", 2500, 500000);
+        House house2 = new House(102, "Apartment", 1500, 300000);
+        House house3 = new House(103, "Townhouse", 1800, 350000);
+
+        scheme.addHouse(house1);
+        scheme.addHouse(house2);
+        scheme.addHouse(house3);
+
+        // Display all houses
+        System.out.println("All Houses in the Scheme:");
+        scheme.displayAllHouses();
+
+        // Calculate and display total value of all houses
+        double totalValue = scheme.calculateTotalValue();
+        System.out.println("Total Value of all houses: $" + totalValue);
+    }
+}
