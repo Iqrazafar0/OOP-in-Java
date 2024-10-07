@@ -1,0 +1,55 @@
+//create Average class also import Scanner class or user input
+import java.util.Scanner;
+
+class Average {
+    // Attributes
+    int eng;
+    int urdu;
+    int ict;
+    int tbw;
+
+    // Constructor for Average class
+    Average(int e, int u, int i, int t) {
+        eng = e;
+        urdu = u;
+        ict = i;
+        tbw = t;
+    }
+
+    // Method to display average
+    void displayAverage() {
+        // Corrected average calculation
+        System.out.println((eng + urdu + ict + tbw) / 4);
+    }
+}
+
+// Main class
+public class AVGMain {
+    public static void main(String[] args) {
+        // Create an object for Scanner class
+        Scanner scobj = new Scanner(System.in);
+
+        // Take input from user
+        System.out.println("Enter English marks: ");
+        int eng = scobj.nextInt();
+        System.out.println("Enter Urdu marks: ");
+        int urdu = scobj.nextInt();
+        System.out.println("Enter ICT marks: ");
+        int ict = scobj.nextInt();
+        System.out.println("Enter TBW marks: ");
+        int tbw = scobj.nextInt();
+
+        // Print statements for marks
+        System.out.println("English: " + eng);
+        System.out.println("Urdu: " + urdu);
+        System.out.println("ICT: " + ict);
+        System.out.println("TBW: " + tbw);
+
+        // Create object for Average class
+        System.out.println("Average Value: ");
+        Average obj = new Average(eng, urdu, ict, tbw);
+        
+        // Call method to display average
+        obj.displayAverage();
+    }
+}
