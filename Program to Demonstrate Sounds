@@ -1,0 +1,42 @@
+// Class for Bird
+class Bird {
+    void sound() {
+        System.out.println("Chirp Chirp");  // Bird sound
+    }
+}
+
+// Class for Dog
+class Dog {
+    void sound() {
+        System.out.println("Woof Woof");  // Dog sound
+    }
+}
+
+// Class for Cat
+class Cat {
+    void sound() {
+        System.out.println("Meow Meow");  // Cat sound
+    }
+}
+
+// Class for Lion
+class Lion {
+    void sound() {
+        System.out.println("Roar Roar");  // Lion sound
+    }
+}
+
+// Main class to demonstrate the sounds of different animals
+public class AnimalSounds {
+    public static void main(String[] args) {
+        Bird bird = new Bird();  // Creating a Bird object
+        Dog dog = new Dog();     // Creating a Dog object
+        Cat cat = new Cat();     // Creating a Cat object
+        Lion lion = new Lion();  // Creating a Lion object
+        
+        bird.sound();  // Bird sound
+        dog.sound();   // Dog sound
+        cat.sound();   // Cat sound
+        lion.sound();  // Lion sound
+    }
+}
