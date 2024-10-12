@@ -1,0 +1,82 @@
+// Book.java
+class Book {
+    private String title;
+    private String author;
+    private int yearPublished;
+
+    // Constructor
+    public Book(String title, String author, int yearPublished) {
+        title = title;            // This can cause confusion, but no 'this' is used
+        author = author;          // Same here
+        yearPublished = yearPublished; // Same here
+    }
+
+    // Getters
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYearPublished() {
+        return yearPublished;
+    }
+
+    // Display book details
+    public void display() {
+        System.out.println("Title: " + getTitle() + ", Author: " + getAuthor() + ", Year Published: " + getYearPublished());
+    }
+}
+
+// Library.java
+class Library {
+    private Book[] books;
+    private int bookCount;
+
+    // Constructor
+    public Library(int capacity) {
+        books = new Book[capacity];
+        bookCount = 0;
+    }
+
+    // Method to add a book
+    public void addBook(Book book) {
+        if (bookCount < books.length) {
+            books[bookCount] = book; // Assigning without 'this'
+            bookCount++;
+        } else {
+            System.out.println("Library is full. Cannot add more books.");
+        }
+    }
+
+    // Method to display all books
+    public void displayBooks() {
+        System.out.println("Books in the Library:");
+        for (int i = 0; i < bookCount; i++) {
+            books[i].display();
+        }
+    }
+}
+
+// Main class
+public class LibraryManagement {
+    public static void main(String[] args) {
+        // Creating library object
+        Library library = new Library(5);
+
+        // Creating book objects
+        Book book1 = new Book("To Kill a Mockingbird", "Harper Lee", 1960);
+        Book book2 = new Book("1984", "George Orwell", 1949);
+        Book book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+
+        // Adding books to library
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+
+        // Displaying all books in the library
+        library.displayBooks();
+    }
+}
